@@ -1,9 +1,5 @@
-<nav>
-    <ul>
-        {% for  link,name in nav %}
-            <li>
-                <a href="{{link}}">{{name}}</a>
-            </li>
-        {% endfor %}
-    </ul>
-</nav>
+{% for  link,name in nav %}
+    <li class='nav-item'>
+        <a class='nav-link' href="{{link}}">{{name}}</a>
+    </li>
+{% endfor %}
