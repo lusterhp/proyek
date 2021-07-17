@@ -7,7 +7,7 @@ def home(request):
     context = {
         'judul': 'Project Shop SPTM',
         'subjudul': 'Sistem Produksi Terdistribusi Mandiri',
-        'konten': 'Daftar Menu:',
+        'konten': '',
         'banner': 'img/banner.png',
         'nav': [
             ['/' ,'Halaman Utama' ],

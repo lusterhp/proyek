@@ -10,6 +10,7 @@ def about(request):
         'subjudul': 'Sistem Produksi Terdistribusi Mandiri',
         'konten': "Tentang Pembuat",
         'banner': 'about/img/banner.png',
+        'app_css': 'about/css/style.css',
         'nav': [
             ['/' ,'Halaman Utama' ],
         ],

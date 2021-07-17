@@ -8,17 +8,16 @@ def order(request):
     context = {
         'judul': "Project Shop SPTM",
         'subjudul': "Sistem Produksi Terdistribusi Mandiri",
-        'konten': 'Silahkan Mlakukan Permintaan Penjadwalan Produksi Dengan Mengisi Form',
+        'konten': 'Silahkan Melakukan Permintaan Penjadwalan Produksi Pada Laman Form Pendaftaran',
+        'konten2': 'atau',
+        'konten3': 'Melihat Daftar Penjadwalan Produksi Pada Laman List Jadwal',
         'banner': 'order/img/banner.png',
+        'app_css': 'order/css/style.css',
         'nav': [
             ['/' ,'Halaman Utama' ],
-        ],
-        'nav2': [
             ['/order' ,'Penjadwalan Produksi' ],
-        ],
-        'subnav2': [
-            ['/order/form' ,'Form Permintaan Penjadwalan Produksi' ],
-            ['/order/daftar' ,'Daftar Penjadwalan Produksi' ],
+            ['/order/form' ,'Form Pendaftaran' ],
+            ['/order/daftar' ,'List Jadwal' ],
         ],
     }
     return render(request, 'order/order.html', context)
@@ -29,15 +28,12 @@ def daftar(request):
         'subjudul': "Sistem Produksi Terdistribusi Mandiri",
         'konten': "Berikut adalah daftar penjadwalan:",
         'banner': 'order/img/banner.png',
-        'nav': [
+        'app_css': 'order/css/style.css',
+       'nav': [
             ['/' ,'Halaman Utama' ],
-        ],
-        'nav2': [
             ['/order' ,'Penjadwalan Produksi' ],
-        ],
-        'subnav2': [
-            ['/order/form' ,'Permintaan Penjadwalan Produksi' ],
-            ['/order/daftar' ,'Daftar Penjadwalan Produksi' ],
+            ['/order/form' ,'Form Pendaftaran' ],
+            ['/order/daftar' ,'List Jadwal' ],
         ],
     }
 
@@ -49,15 +45,12 @@ def form(request):
         'subjudul': 'Sistem Produksi Terdistribusi Mandiri',
         'konten': 'Silahkan Mengisi Form untuk Meminta Penjadwalan Produksi',
         'banner': 'order/img/banner.png',
+        'app_css': 'order/css/style.css',
         'nav': [
             ['/' ,'Halaman Utama' ],
-        ],
-        'nav2': [
             ['/order' ,'Penjadwalan Produksi' ],
-        ],
-        'subnav2': [
-            ['/order/form' ,'Permintaan Penjadwalan Produksi' ],
-            ['/order/daftar' ,'Daftar Penjadwalan Produksi' ],
+            ['/order/form' ,'Form Pendaftaran' ],
+            ['/order/daftar' ,'List Jadwal' ],
         ],
     }
 

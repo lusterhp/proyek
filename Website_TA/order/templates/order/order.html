@@ -1,45 +1,9 @@
-{% load static %}
+{% extends 'home.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{judul}}</title>
-</head>
-<body>
+{% block content %}
 
-    <div>
-        <img style="width: 100%;" src="{% static banner %}" alt="">
-    </div>
+<h2>{{konten}}</h2>
+<h2>{{konten2}}</h2>
+<h2>{{konten3}}</h2>
 
-    <center>
-        <h1>Penjadwalan {{judul}}</h1>
-        <h3>{{subjudul}}</h3>
-    </center>
-
-    <ul>
-        {% for  link,name in nav %}
-            <li>
-                <a href="{{link}}">{{name}}</a>
-            </li>
-        {% endfor %}
-        {% for  link,name in nav2 %}
-            <li>
-                <a href="{{link}}">{{name}}</a>
-            </li>
-        {% endfor %}
-            <ul>
-                {% for  link,name in subnav2 %}
-                    <li>
-                        <a href="{{link}}">{{name}}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-    </ul>
-
-    <h3>{{konten}}</h3>
-
-</body>
-</html>
+{% endblock  %}
