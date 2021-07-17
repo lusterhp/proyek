@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{judul}}</title>
+</head>
+<body>
+
+    <div>
+        <img style="width:100%" src="{% static banner %}" alt="">
+    </div>
+
+    <center>
+        <h1>Penjadwalan {{judul}}</h1>
+        <h3>{{subjudul}}</h3>
+    </center>
+
+    <ul>
+    <h4>{{konten}}</h4>
+    </ul>
+
+    <ul>
+        {% for  link,name in nav %}
+            <li>
+                <a href="{{link}}">{{name}}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
