@@ -8,7 +8,8 @@ def about(request):
     context = {
         'judul': 'Project Shop SPTM',
         'subjudul': 'Sistem Produksi Terdistribusi Mandiri',
-        'konten': "Tentang Pembuat",
+        'heading': "Tentang Pembuat",
+        'subheading': "Luster Hiroshi Pramushinto",
         'banner': 'about/img/banner.png',
         'app_css': 'about/css/style.css',
         'nav': [

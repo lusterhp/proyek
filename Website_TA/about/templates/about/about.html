@@ -1,7 +1,33 @@
 {% extends 'home.html' %}
+{% load static %}
+
+{% block header %}
+
+<h1>{{heading}}</h1>
+<p class="lead">{{subheading}}</p>
+
+{% endblock header %}
 
 {% block content %}
+    <div class="container bg-white text-dark shadow">
+        <div class="row" style='height:350px'>
+                <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid quaerat error fuga deserunt consequuntur similique accusamus ullam, modi possimus excepturi vitae quos. Veritatis, officiis consequatur. Provident quis, similique est aperiam impedit perferendis perspiciatis voluptatibus rerum quibusdam praesentium ab maxime. Neque sunt fuga beatae aspernatur iusto placeat, harum eum inventore sint voluptatum odit asperiores architecto? Unde nesciunt non in ea perferendis.</h5>
+        </div>
+    </div>
+{% endblock content %}
 
-<h2>{{konten}}</h2>
+{% block content2 %}
+    <div class="container bg-dark text-white shadow">
+        <div class="row" style='height:350px'>
+            <h5>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt molestiae nihil porro reiciendis fuga doloribus explicabo temporibus sapiente. Recusandae tempore in suscipit incidunt! Quae laboriosam voluptas dignissimos id soluta minima blanditiis quam in, autem facilis! Sapiente molestiae error minus dolores, blanditiis optio illum veritatis vitae quam, numquam voluptatem reiciendis nihil, laborum temporibus dolore enim. Aspernatur, beatae omnis. Deleniti, eligendi voluptates.</h5>
+        </div>
+    </div>
+{% endblock content2 %}
 
-{% endblock  %}
+{% block content3 %}
+    <div class="container bg-white text-dark shadow">
+        <div class="row" style='height:350px'>
+            
+        </div>
+    </div>
+{% endblock content3 %}

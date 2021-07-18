@@ -8,9 +8,8 @@ def order(request):
     context = {
         'judul': "Project Shop SPTM",
         'subjudul': "Sistem Produksi Terdistribusi Mandiri",
-        'konten': 'Silahkan Melakukan Permintaan Penjadwalan Produksi Pada Laman Form Pendaftaran',
-        'konten2': 'atau',
-        'konten3': 'Melihat Daftar Penjadwalan Produksi Pada Laman List Jadwal',
+        'heading': "Penjadwalan Produksi",
+        'subheading': 'Silahkan Melakukan Permintaan Penjadwalan Produksi Pada Laman Form Pendaftaran atau Melihat Daftar Penjadwalan Produksi Pada Laman List Jadwal',
         'banner': 'order/img/banner.png',
         'app_css': 'order/css/style.css',
         'nav': [
@@ -26,7 +25,8 @@ def daftar(request):
     context = {
         'judul': "Project Shop SPTM",
         'subjudul': "Sistem Produksi Terdistribusi Mandiri",
-        'konten': "Berikut adalah daftar penjadwalan:",
+        'heading': "List Jadwal",
+        'subheading': "Berikut Adalah List Penjadwalan yang Telah Terdaftar",
         'banner': 'order/img/banner.png',
         'app_css': 'order/css/style.css',
        'nav': [
@@ -43,7 +43,8 @@ def form(request):
     context = {
         'judul': 'Project Shop SPTM',
         'subjudul': 'Sistem Produksi Terdistribusi Mandiri',
-        'konten': 'Silahkan Mengisi Form untuk Meminta Penjadwalan Produksi',
+        'heading': "Form Pendaftaran",
+        'subheading': 'Silahkan Mengisi Form untuk Meminta Penjadwalan Produksi',
         'banner': 'order/img/banner.png',
         'app_css': 'order/css/style.css',
         'nav': [
