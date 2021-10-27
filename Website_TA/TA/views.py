@@ -12,8 +12,11 @@ def home(request):
         'nav': [
             ['/' ,'Halaman Utama' ],
             ['/about' ,'Tentang Pembuat' ],
-            ['/order' ,'Penjadwalan Produksi' ],
+            ['/order' ,'List Penjadwalan' ],
+            ['/produk' ,'List Pesanan' ],
+            ['/projectshop' ,'List Asset' ],
         ],
+        'konek': 'TA SYIFA',
     }
 
     return render(request, 'home.html', context)

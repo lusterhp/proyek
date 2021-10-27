@@ -14,6 +14,7 @@ def about(request):
         'app_css': 'about/css/style.css',
         'nav': [
             ['/' ,'Halaman Utama' ],
+            ['/about' ,'Tentang Pembuat' ],
         ],
     }
 

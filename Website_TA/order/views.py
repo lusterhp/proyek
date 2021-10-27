@@ -1,27 +1,14 @@
 # views order
 
+from .models import LapakKerja
 from django.shortcuts import render
+from .models import ProsesKerja
+from .forms import FormPenjadwalan, ProsesKerja
 
 # Create your views here.
 
-def order(request):
-    context = {
-        'judul': "Project Shop SPTM",
-        'subjudul': "Sistem Produksi Terdistribusi Mandiri",
-        'heading': "Penjadwalan Produksi",
-        'subheading': 'Silahkan Melakukan Permintaan Penjadwalan Produksi Pada Laman Form Pendaftaran atau Melihat Daftar Penjadwalan Produksi Pada Laman List Jadwal',
-        'banner': 'order/img/banner.png',
-        'app_css': 'order/css/style.css',
-        'nav': [
-            ['/' ,'Halaman Utama' ],
-            ['/order' ,'Penjadwalan Produksi' ],
-            ['/order/form' ,'Form Pendaftaran' ],
-            ['/order/daftar' ,'List Jadwal' ],
-        ],
-    }
-    return render(request, 'order/order.html', context)
-
-def daftar(request):
+def list(request):
+    jadwal1 = ProsesKerja.objects.all()
     context = {
         'judul': "Project Shop SPTM",
         'subjudul': "Sistem Produksi Terdistribusi Mandiri",
@@ -29,30 +16,57 @@ def daftar(request):
         'subheading': "Berikut Adalah List Penjadwalan yang Telah Terdaftar",
         'banner': 'order/img/banner.png',
         'app_css': 'order/css/style.css',
-       'nav': [
-            ['/' ,'Halaman Utama' ],
-            ['/order' ,'Penjadwalan Produksi' ],
-            ['/order/form' ,'Form Pendaftaran' ],
-            ['/order/daftar' ,'List Jadwal' ],
-        ],
-    }
-
-    return render(request, 'order/order.html', context)
-
-def form(request):
-    context = {
-        'judul': 'Project Shop SPTM',
-        'subjudul': 'Sistem Produksi Terdistribusi Mandiri',
-        'heading': "Form Pendaftaran",
-        'subheading': 'Silahkan Mengisi Form untuk Meminta Penjadwalan Produksi',
-        'banner': 'order/img/banner.png',
-        'app_css': 'order/css/style.css',
         'nav': [
             ['/' ,'Halaman Utama' ],
-            ['/order' ,'Penjadwalan Produksi' ],
+            ['/order' ,'List Penjadwalan' ],
             ['/order/form' ,'Form Pendaftaran' ],
-            ['/order/daftar' ,'List Jadwal' ],
         ],
+        'Jadwal1':jadwal1,
     }
 
-    return render(request, 'order/order.html', context)
+    return render(request, 'order/list.html', context)
+
+def form(request):
+    if request.POST:
+        form = FormPenjadwalan(request.POST)
+        if form.is_valid():
+            form.save()
+            form = FormPenjadwalan()
+            pesan = "Penjadwalan berhasil didaftarkan"
+            context = {
+                'judul': 'Project Shop SPTM',
+                'subjudul': 'Sistem Produksi Terdistribusi Mandiri',
+                'heading': "Form Pendaftaran",
+                'subheading': 'Silahkan Mengisi Form untuk Meminta Penjadwalan Produksi',
+                'banner': 'order/img/banner.png',
+                'app_css': 'order/css/style.css',
+                'nav': [
+                    ['/' ,'Halaman Utama' ],
+                    ['/order' ,'List Penjadwalan' ],
+                    ['/order/form' ,'Form Pendaftaran' ],
+                ],
+                'form':form,
+                'pesan':pesan,
+            }
+
+            return render(request, 'order/form.html', context)
+
+    else:
+        form = FormPenjadwalan()
+        context = {
+            'judul': 'Project Shop SPTM',
+            'subjudul': 'Sistem Produksi Terdistribusi Mandiri',
+            'heading': "Form Pendaftaran",
+            'subheading': 'Silahkan Mengisi Form untuk Meminta Penjadwalan Produksi',
+            'banner': 'order/img/banner.png',
+            'app_css': 'order/css/style.css',
+            'nav': [
+                ['/' ,'Halaman Utama' ],
+                ['/order' ,'List Penjadwalan' ],
+                ['/order/form' ,'Form Pendaftaran' ],
+            ],
+            'form':form,
+        }
+
+        return render(request, 'order/form.html', context)
+

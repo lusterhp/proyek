@@ -1,0 +1,49 @@
+{% extends 'home.html' %}
+
+{% block header %}
+
+<h1>{{heading}}</h1>
+<p class="lead">{{subheading}}</p>
+
+{% endblock header %}
+
+{% block content %}
+
+    <h1>List Lapak</h1>
+
+    <table class="table table-hover table-bordered" style="width:100%">
+        <tr>
+            <th>Nama Lapak</th>
+        </tr>
+        {% for lapak in Lapak %}
+            <tr>
+                <td>{{lapak.nama_lapak}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock  %}
+
+{% block content2 %}
+
+    <h1>List Alat</h1>
+
+    <table class="table table-hover table-bordered" style="width:100%">
+        <tr>
+            <th>Nama Alat</th>
+            <th>Kode Alat</th>
+        </tr>
+        {% for alat in Alat %}
+            <tr>
+                <td>{{alat.nama_alat}}</td>
+                <td>{{alat.kodealat_id}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock  %}
+
+{% block content3 %}
+
+
+{% endblock  %}
